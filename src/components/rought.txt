@@ -1,0 +1,17 @@
+<News pageSize={6} country="in" category="business" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+<News pageSize={6} country="in" category="entertainment" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+<News pageSize={6} country="in" category="generalhealth" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+<News pageSize={6} country="in" category="science" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+<News pageSize={6} country="in" category="sports" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+<News pageSize={6} country="in" category="technology" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+
+
+ <News pageSize={6} country="in" category="sports" api="7dcb46a28e1b498d86bdac6e6f774d32" />
+
+
+ <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<NoPage />} />
+        </Route>
