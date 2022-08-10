@@ -64,8 +64,8 @@ export class News extends Component {
         return (
             <>
 
-                <div className="container" style={{ margin: "50px" }}>
-                    <h1 align="center">Newsworld-Top {this.props.category[0].toUpperCase()+this.props.category.slice(1)} headlines</h1>
+                <div className="container">
+                    <h1 align="center" style={{ margin: "50px 0px 50px 0px" }}>Newsworld-Top {this.props.category[0].toUpperCase()+this.props.category.slice(1)} headlines</h1>
                     {/* {this.state.loading && <Spinner/>} */}
                     <InfiniteScroll
                     dataLength={this.state.articles.length}
@@ -77,7 +77,7 @@ export class News extends Component {
                         {/* here we have used array map function to map the content with data.json file  */}
                         {!this.state.loading &&this.state.articles.map((element) => {
                             // we have used key to unqiuely define each news with there url so different news can be render
-                            return <div className="col-sm" key={element.url}>
+                            return <div className="col-md-4" key={element.url}>
                                 <Newsitems imgurl={ element.urlToImage ? element.urlToImage : "https://c.ndtvimg.com/2022-08/tt2dkki8_mobile_625x300_08_August_22.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=675?ver-20220723.02"} title={element.title} desc={element.description} url={element.url} source={element.source.name?element.source.name:"unknown"} time={new Date(element.publishedAt).toTimeString()} author={element.author?element.author:"Anoynomous"} color={this.props.color}/>
                             </div>
                         })}
