@@ -25,21 +25,26 @@ export class News extends Component {
             articles: this.articles,
             loading: false,
             totalResult:1,
-            page: 1
+            page: 1,
         }
         document.title=`Newsworld-${this.props.category[0].toUpperCase()+this.props.category.slice(1)} articles`
     }
     async componentDidMount() {
+        this.props.setProgress(10)
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.api}&page=${this.state.page}&pageSize=${this.props.pageSize}`
-        this.setState({loading:true})
+        this.setState({loading:true});
+        this.props.setProgress(30)
         let data = await fetch(url);
         // data parse kiya api se aur uski ek json file ki traah bnayi
         let parsedData = await data.json()
+        this.props.setProgress(50)
         this.setState({ articles: parsedData.articles,
             loading:false,
             totalResult: parsedData.articles.length 
         }
         )
+        this.props.setProgress(100)
+
     }
     fetchMoreData = async()=>{
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.api}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`
