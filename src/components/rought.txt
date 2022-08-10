@@ -15,3 +15,20 @@
           <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<NoPage />} />
         </Route>
+        git init
+git add .
+git commit -m "second commit"
+git branch -M main
+git remote add origin https://github.com/ANONYMOUSCHIEF/Newsworld.git
+git push -u origin main
+
+primary
+secondary
+success
+danger
+warning
+info
+light bg-dark
+dark
+<p><a href="#" class="text-muted">Muted link</a></p>
+white bg-dark">White link</a></p>

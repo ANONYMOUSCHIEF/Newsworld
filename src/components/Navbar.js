@@ -14,7 +14,7 @@ export class navbar extends Component {
                             <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">About</Link>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/business">Business</Link></li>
